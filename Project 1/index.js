@@ -1,75 +1,41 @@
-function NavBar() {
+function Header() {
     return (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <a className="nabar-brand" href="#">Navbar</a>
-            <button className="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            ariea-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-            </button>
-            
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul className="navbar-nav mr-auto">
-                    <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span className="sr-only">(current)
-                        </span></a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Link</a>
-                    </li>
-                    <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-                            role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a className="dropdown-item" href="#">Action</a>
-                            <a className="dropdown-item" href="#">Another action</a>
-                            <div className="dropdown-divider"></div>
-                            <a className="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-                <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search"
-                        aria-label="Search" />
-                    <button className="btn btn-outline-success my-2 my-sm-0"
-                    type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
+        <header>
+            <nav>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png" width="40px" />
+            </nav>
+        </header>
+    )
+}
+
+function Footer() {
+    return (
+        <footer>
+            <small>© 2023 Alam development. All rights reserved.</small>
+        </footer>
     )
 }
 
 function MainContent() {
     return (
-        <h1>I'm learning React!</h1>
+        <div>
+            <h1>Reasons I'm excited for React</h1>
+            <ol>
+                <li>First frontend framework</li>
+                <li>Not bad</li>
+            </ol>
+        </div>
     )
 }
 
-const navbar = (
-    <nav>
-        <h1>MyBrand</h1>
-        <ul>
-            <li>Pricing</li>
-            <li>About</li>
-            <li>Contact</li>
-        </ul>
-    </nav>
-)
+function Page() {
+    return (
+        <div>
+            <Header />
+            <MainContent />
+            <Footer />
+        </div>
+    )
+}
 
-/*
-ReactDOM.render(
-    <div>
-        <NavBar />
-        <MainContent />
-        challenge
-    </div>,
-    $('#root')[0]
-)
-*/
-
-ReactDOM.render(navbar, $('#root')[0])
+ReactDOM.render(<Page />, $('#root')[0])
